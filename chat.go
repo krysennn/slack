@@ -105,9 +105,9 @@ func (api *Client) PostMessageContext(ctx context.Context, channel, text string,
 // PostEphemeral sends an ephemeral message to a user in a channel.
 // Message is escaped by default according to https://api.slack.com/docs/formatting
 // Use http://davestevens.github.io/slack-message-builder/ to help crafting your message.
-func (api *Client) PostEphemeral(channel, userID string, params PostMessageParameters) (string, error) {
+func (api *Client) PostEphemeral(channel, userID string, text string, params PostMessageParameters) (string, error) {
 
-	options = append(options, MsgOptionPostEphemeral())
+	//options = append(options, MsgOptionPostEphemeral())
 	return api.PostEphemeralContext(
 		context.Background(),
 		channel,
