@@ -135,7 +135,7 @@ func (api *Client) PostEphemeralContext(ctx context.Context, channel, userID str
 
 // UpdateMessageWithParams updates a message in a channel with params
 func (api *Client) UpdateMessageWithParams(channel, timestamp, text string, params PostMessageParameters) (string, string, string, error) {
-	return api.SendMessageContext(context.Background(), channel, MsgOptionUpdate(timestamp), MsgOptionText(text, params.EscapeText), MsgOptionAttachments(params.Attachments...), MsgOptionPostMessageParameters(params), MsgOptionPostEphemeral(timestamp))
+	return api.SendMessageContext(context.Background(), channel, MsgOptionUpdate(timestamp), MsgOptionText(text, params.EscapeText), MsgOptionAttachments(params.Attachments...), MsgOptionPostMessageParameters(params))
 }
 
 // UpdateMessage updates a message in a channel
