@@ -114,6 +114,7 @@ func (api *Client) PostEphemeral(channel, userID string, text string, params Pos
 		MsgOptionText(text, params.EscapeText),
 		MsgOptionAttachments(params.Attachments...),
 		MsgOptionPostMessageParameters(params),
+		MsgOptionPostEphemeral(),
 	)
 }
 
