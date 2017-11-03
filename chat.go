@@ -141,11 +141,6 @@ func (api *Client) UpdateMessageWithParams(channel, timestamp, text string, para
 	return api.SendMessageContext(context.Background(), channel, MsgOptionUpdate(timestamp), MsgOptionText(text, params.EscapeText), MsgOptionAttachments(params.Attachments...), MsgOptionPostMessageParameters(params))
 }
 
-// DeleteMessage delete a message in a channel
-func (api *Client) DeleteMessage(channel, timestamp) (string, string, string, error) {
-	return api.SendMessageContext(context.Background(), channel, MsgOptionDelete(timestamp))
-}
-
 // UpdateMessage updates a message in a channel
 func (api *Client) UpdateMessage(channel, timestamp, text string) (string, string, string, error) {
 	return api.UpdateMessageContext(context.Background(), channel, timestamp, text)
